@@ -169,20 +169,6 @@ Tamaño máximo en bytes para leer del final del archivo (Recomendado: 524288 = 
 *Permite cargar instantáneamente archivos de log gigantes (GBs) leyendo solo la parte más reciente.*
 
 #### `enableVirtualScroll` (Boolean)
-Activa la renderización virtual de la lista de logs.
-*Esencial para mantener la fluidez de la interfaz cuando hay muchos logs.*
-
-## 🖥️ Guía de Uso de la Interfaz
-
-### 1. Pestañas y Auto-descubrimiento
-- **Pestañas Dinámicas**: Se crea una pestaña automáticamente por cada TAG único encontrado.
-- **Auto-descubrimiento**: Si añades un nuevo archivo de log mientras el monitor está corriendo, aparecerá una nueva pestaña automáticamente en unos 10 segundos (sin reiniciar).
-
-### 2. Filtrado y Búsqueda
-- **Buscador**: Escribe texto para filtrar logs en tiempo real (con debounce de 100ms).
-- **Niveles**: Haz clic en los botones `INFO`, `ERROR`, `DEBUG`, etc., para mostrar solo esos niveles.
-- **Filtro de Fecha/Hora**:
-  - Selecciona fecha/hora de inicio en "Desde".
   - Selecciona fecha/hora de fin en "Hasta".
   - Usa el botón **✕** para limpiar el filtro rápidamente.
 
