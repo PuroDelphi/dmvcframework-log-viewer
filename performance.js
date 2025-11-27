@@ -1,4 +1,4 @@
-// Performance Optimizations for Log Monitor
+// Performance Optimizations for DMVCFramework Log Viewer
 (function () {
     'use strict';
 
