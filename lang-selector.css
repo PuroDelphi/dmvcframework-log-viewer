@@ -1,0 +1,92 @@
+/* Language Selector Styles */
+.lang-selector {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 16px;
+}
+
+.lang-selector-label {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.lang-options {
+    display: flex;
+    gap: 4px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-option {
+    padding: 6px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.lang-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.lang-option.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.lang-option:active {
+    transform: scale(0.95);
+}
+
+/* Flag emoji styling (optional enhancement) */
+.lang-option::before {
+    margin-right: 6px;
+}
+
+.lang-option[data-lang="en"]::before {
+    content: "🇬🇧 ";
+}
+
+.lang-option[data-lang="es"]::before {
+    content: "🇪🇸 ";
+}
+
+.lang-option[data-lang="it"]::before {
+    content: "🇮🇹 ";
+}
+
+.lang-option[data-lang="pt"]::before {
+    content: "🇵🇹 ";
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .lang-selector {
+        margin-left: 0;
+        margin-top: 12px;
+    }
+
+    .lang-selector-label {
+        display: none;
+    }
+
+    .lang-options {
+        flex-wrap: wrap;
+    }
+
+    .lang-option {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+}

@@ -7,19 +7,30 @@
     <title>DMVCFramework Log Viewer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="datetime-filter.css">
+    <link rel="stylesheet" href="lang-selector.css">
 </head>
 
 <body>
     <div class="container">
         <header>
             <div class="header-content">
-                <h1>📊 DMVCFramework Log Viewer</h1>
+                <h1 data-i18n="appTitle">📊 DMVCFramework Log Viewer</h1>
                 <div class="header-info">
+                    <div class="lang-selector">
+                        <span class="lang-selector-label" data-i18n="selectLanguage">Language:</span>
+                        <div class="lang-options">
+                            <button class="lang-option" data-lang="en" onclick="i18n.setLanguage('en')">EN</button>
+                            <button class="lang-option" data-lang="es" onclick="i18n.setLanguage('es')">ES</button>
+                            <button class="lang-option" data-lang="it" onclick="i18n.setLanguage('it')">IT</button>
+                            <button class="lang-option" data-lang="pt" onclick="i18n.setLanguage('pt')">PT</button>
+                        </div>
+                    </div>
                     <span class="status-indicator" id="status">
                         <span class="pulse"></span>
-                        Conectado
+                        <span id="statusText" data-i18n="connected">Connected</span>
                     </span>
-                    <span class="last-update">Última actualización: <span id="lastUpdate">--:--:--</span></span>
+                    <span class="last-update"><span data-i18n="lastUpdate">Last update</span>: <span
+                            id="lastUpdate">--:--:--</span></span>
                 </div>
             </div>
         </header>
@@ -31,20 +42,20 @@
 
             <div class="filter-controls">
                 <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Buscar en logs...">
+                    <input type="text" id="searchInput" data-i18n="searchPlaceholder" placeholder="Search in logs...">
                     <span class="search-icon">🔎</span>
                 </div>
 
                 <div class="date-time-filter">
-                    <label class="filter-label">Filtrar por fecha/hora:</label>
+                    <label class="filter-label" data-i18n="filterByDateTime">Filter by date/time:</label>
                     <div class="datetime-inputs">
                         <div class="datetime-group">
-                            <label for="startDate">Desde:</label>
+                            <label for="startDate" data-i18n="from">From:</label>
                             <input type="date" id="startDate" class="datetime-input">
                             <input type="time" id="startTime" class="datetime-input" step="1">
                         </div>
                         <div class="datetime-group">
-                            <label for="endDate">Hasta:</label>
+                            <label for="endDate" data-i18n="to">To:</label>
                             <input type="date" id="endDate" class="datetime-input">
                             <input type="time" id="endTime" class="datetime-input" step="1">
                         </div>
@@ -53,19 +64,20 @@
                 </div>
 
                 <div class="filter-group">
-                    <label class="filter-label">Filtrar por nivel:</label>
-                    <button class="filter-btn active" data-level="all">Todos</button>
-                    <button class="filter-btn" data-level="INFO">INFO</button>
-                    <button class="filter-btn" data-level="WARNING">WARNING</button>
-                    <button class="filter-btn" data-level="ERROR">ERROR</button>
-                    <button class="filter-btn" data-level="DEBUG">DEBUG</button>
-                    <button class="filter-btn" data-level="FATAL">FATAL</button>
+                    <label class="filter-label" data-i18n="filterByLevel">Filter by level:</label>
+                    <button class="filter-btn active" data-level="all" data-i18n="levelAll">All</button>
+                    <button class="filter-btn" data-level="INFO" data-i18n="levelInfo">INFO</button>
+                    <button class="filter-btn" data-level="WARNING" data-i18n="levelWarning">WARNING</button>
+                    <button class="filter-btn" data-level="ERROR" data-i18n="levelError">ERROR</button>
+                    <button class="filter-btn" data-level="DEBUG" data-i18n="levelDebug">DEBUG</button>
+                    <button class="filter-btn" data-level="FATAL" data-i18n="levelFatal">FATAL</button>
                 </div>
 
                 <div class="action-buttons">
-                    <button id="clearBtn" class="action-btn">🗑️ Limpiar</button>
-                    <button id="pauseBtn" class="action-btn">⏸️ Pausar</button>
-                    <button id="autoScrollBtn" class="action-btn active">📜 Auto-scroll</button>
+                    <button id="clearBtn" class="action-btn">🗑️ <span data-i18n="btnClear">Clear</span></button>
+                    <button id="pauseBtn" class="action-btn">⏸️ <span data-i18n="btnPause">Pause</span></button>
+                    <button id="autoScrollBtn" class="action-btn active">📜 <span
+                            data-i18n="btnAutoScroll">Auto-scroll</span></button>
                 </div>
             </div>
         </div>
@@ -78,15 +90,16 @@
 
         <footer>
             <div class="stats">
-                <span>Total de entradas: <strong id="totalEntries">0</strong></span>
-                <span>Filtradas: <strong id="filteredEntries">0</strong></span>
-                <span>Tags detectados: <strong id="tagsCount">0</strong></span>
-                <span>Intervalo de actualización: <strong>2s</strong></span>
+                <span><span data-i18n="totalEntries">Total entries</span>: <strong id="totalEntries">0</strong></span>
+                <span><span data-i18n="filtered">Filtered</span>: <strong id="filteredEntries">0</strong></span>
+                <span><span data-i18n="detectedTags">Detected tags</span>: <strong id="tagsCount">0</strong></span>
+                <span><span data-i18n="updateInterval">Update interval</span>: <strong>2s</strong></span>
             </div>
         </footer>
     </div>
 
     <script src="config.js"></script>
+    <script src="i18n.js"></script>
     <script src="app.js"></script>
     <script src="datetime-filter.js"></script>
     <script src="performance.js"></script>

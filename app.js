@@ -53,6 +53,35 @@ document.addEventListener('DOMContentLoaded', async () => {
     await discoverLogs();
 });
 
+// Listen for language changes
+window.addEventListener('languageChanged', (e) => {
+    const lang = e.detail.lang;
+    console.log(`Language changed to: ${lang}`);
+
+    // Refresh dynamic content
+    if (state.currentTab) {
+        displayLogs(state.currentTab);
+    } else if (state.logFiles.length === 0) {
+        showNoLogsMessage();
+    }
+
+    updateLastUpdateTime();
+
+    // Update status text
+    const statusText = document.getElementById('statusText');
+    if (statusText) {
+        statusText.textContent = state.isPaused ? i18n.t('paused') : i18n.t('connected');
+    }
+
+    // Update button texts that might have icons
+    if (state.isPaused) {
+        const pauseBtn = document.getElementById('pauseBtn');
+        if (pauseBtn) {
+            pauseBtn.innerHTML = `▶️ <span data-i18n="btnResume">${i18n.t('btnResume')}</span>`;
+        }
+    }
+});
+
 // Event Listeners
 function initializeEventListeners() {
     // Filter buttons
@@ -129,7 +158,7 @@ async function discoverLogs() {
 
     } catch (error) {
         console.error('Error discovering log files:', error);
-        showErrorMessage('No se pudo conectar con el servidor. Asegúrate de que server.py esté ejecutándose.');
+        showErrorMessage(i18n.t('connectionError') + '. ' + i18n.t('verifyConfig') + ' server.py');
     }
 }
 
@@ -378,7 +407,7 @@ function displayLogs(tag) {
         container.innerHTML = `
             <div class="empty-state">
                 <div class="empty-state-icon">📭</div>
-                <div>No hay logs disponibles para "${capitalizeTag(tag)}"</div>
+                <div>${i18n.t('emptyState')} "${capitalizeTag(tag)}"</div>
             </div>
         `;
         return;
@@ -444,7 +473,9 @@ function updateTagsCount() {
 
 function updateLastUpdateTime() {
     const now = new Date();
-    const timeString = now.toLocaleTimeString('es-ES');
+    // Use current language for date formatting
+    const lang = i18n.getCurrentLanguage();
+    const timeString = now.toLocaleTimeString(lang === 'en' ? 'en-US' : lang + '-' + lang.toUpperCase());
     document.getElementById('lastUpdate').textContent = timeString;
 }
 
@@ -454,7 +485,7 @@ function showLoadingMessage() {
     container.innerHTML = `
         <div class="empty-state">
             <div class="empty-state-icon">⏳</div>
-            <div>Cargando logs...</div>
+            <div>${i18n.t('loadingLogs')}</div>
         </div>
     `;
 }
@@ -464,9 +495,9 @@ function showNoLogsMessage() {
     container.innerHTML = `
         <div class="empty-state">
             <div class="empty-state-icon">📂</div>
-            <div>No se encontraron archivos de log</div>
+            <div>${i18n.t('noLogsFound')}</div>
             <div style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;">
-                Verifica la configuración en <code style="background: rgba(0,0,0,0.3); padding: 4px 8px; border-radius: 4px;">config.json</code>
+                ${i18n.t('verifyConfig')} <code style="background: rgba(0,0,0,0.3); padding: 4px 8px; border-radius: 4px;">config.json</code>
             </div>
         </div>
     `;
@@ -479,7 +510,7 @@ function showErrorMessage(message) {
             <div class="empty-state-icon">⚠️</div>
             <div>${escapeHtml(message)}</div>
             <div style="margin-top: 16px; color: var(--text-secondary); font-size: 0.9rem;">
-                Inicia el servidor con:<br>
+                ${i18n.t('startServer')}<br>
                 <code style="background: rgba(0,0,0,0.3); padding: 4px 8px; border-radius: 4px;">python server.py</code>
             </div>
         </div>
@@ -502,11 +533,11 @@ function togglePause() {
     const btn = document.getElementById('pauseBtn');
 
     if (state.isPaused) {
-        btn.textContent = '▶️ Reanudar';
+        btn.innerHTML = `▶️ <span data-i18n="btnResume">${i18n.t('btnResume')}</span>`;
         btn.classList.add('active');
         updateStatusIndicator(false);
     } else {
-        btn.textContent = '⏸️ Pausar';
+        btn.innerHTML = `⏸️ <span data-i18n="btnPause">${i18n.t('btnPause')}</span>`;
         btn.classList.remove('active');
         updateStatusIndicator(true);
         loadLogs(); // Immediate update
@@ -522,11 +553,11 @@ function toggleAutoScroll() {
 function updateStatusIndicator(isActive) {
     const status = document.getElementById('status');
     if (isActive) {
-        status.innerHTML = '<span class="pulse"></span>Conectado';
+        status.innerHTML = `<span class="pulse"></span><span id="statusText" data-i18n="connected">${i18n.t('connected')}</span>`;
         status.style.background = 'rgba(0, 255, 136, 0.1)';
         status.style.borderColor = 'var(--success)';
     } else {
-        status.innerHTML = '<span class="pulse" style="background: var(--warning);"></span>Pausado';
+        status.innerHTML = `<span class="pulse" style="background: var(--warning);"></span><span id="statusText" data-i18n="paused">${i18n.t('paused')}</span>`;
         status.style.background = 'rgba(255, 170, 0, 0.1)';
         status.style.borderColor = 'var(--warning)';
     }
