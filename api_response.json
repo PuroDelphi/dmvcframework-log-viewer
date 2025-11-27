@@ -1,0 +1,66 @@
+﻿{
+  "logs": [
+    {
+      "filename": "myAPI.00.dmvcframework.log",
+      "path": "myAPI.00.dmvcframework.log",
+      "absolutePath": "F:\\Documentos\\Embarcadero\\Studio\\Projects\\Clase5MVCFrameWork\\Win32\\Debug\\logs\\LogMonitor\\myAPI.00.dmvcframework.log",
+      "tag": "dmvcframework",
+      "name": "myAPI",
+      "size": 48020,
+      "modified": 1764109324.9972873,
+      "pattern": "Patr\u00f3n: NOMBRE.NUMERO.TAG.log"
+    },
+    {
+      "filename": "myAPI.00.trace.log",
+      "path": "myAPI.00.trace.log",
+      "absolutePath": "F:\\Documentos\\Embarcadero\\Studio\\Projects\\Clase5MVCFrameWork\\Win32\\Debug\\logs\\LogMonitor\\myAPI.00.trace.log",
+      "tag": "trace",
+      "name": "myAPI",
+      "size": 2632,
+      "modified": 1764109324.9972873,
+      "pattern": "Patr\u00f3n: NOMBRE.NUMERO.TAG.log"
+    },
+    {
+      "filename": "myAPI.00.dmvcframework.log",
+      "path": "F:/Documentos/Embarcadero/Studio/Projects/Clase5MVCFrameWork/Win32/Debug/logs/myAPI.00.dmvcframework.log",
+      "absolutePath": "F:\\Documentos\\Embarcadero\\Studio\\Projects\\Clase5MVCFrameWork\\Win32\\Debug\\logs\\myAPI.00.dmvcframework.log",
+      "tag": "dmvcframework",
+      "name": "myAPI",
+      "size": 48020,
+      "modified": 1764109324.9972873,
+      "pattern": "Patr\u00f3n: NOMBRE.NUMERO.TAG.log"
+    },
+    {
+      "filename": "myAPI.00.trace.log",
+      "path": "F:/Documentos/Embarcadero/Studio/Projects/Clase5MVCFrameWork/Win32/Debug/logs/myAPI.00.trace.log",
+      "absolutePath": "F:\\Documentos\\Embarcadero\\Studio\\Projects\\Clase5MVCFrameWork\\Win32\\Debug\\logs\\myAPI.00.trace.log",
+      "tag": "trace",
+      "name": "myAPI",
+      "size": 2632,
+      "modified": 1764109324.9972873,
+      "pattern": "Patr\u00f3n: NOMBRE.NUMERO.TAG.log"
+    },
+    {
+      "filename": "myAPI.00.dmvcframework.log",
+      "path": "myAPI.00.dmvcframework.log",
+      "absolutePath": "F:\\Documentos\\Embarcadero\\Studio\\Projects\\Clase5MVCFrameWork\\Win32\\Debug\\logs\\LogMonitor\\myAPI.00.dmvcframework.log",
+      "tag": "dmvcframework",
+      "name": "myAPI",
+      "size": 48020,
+      "modified": 1764109324.9972873,
+      "pattern": "Patr\u00f3n: NOMBRE.NUMERO.TAG.log"
+    },
+    {
+      "filename": "myAPI.00.trace.log",
+      "path": "myAPI.00.trace.log",
+      "absolutePath": "F:\\Documentos\\Embarcadero\\Studio\\Projects\\Clase5MVCFrameWork\\Win32\\Debug\\logs\\LogMonitor\\myAPI.00.trace.log",
+      "tag": "trace",
+      "name": "myAPI",
+      "size": 2632,
+      "modified": 1764109324.9972873,
+      "pattern": "Patr\u00f3n: NOMBRE.NUMERO.TAG.log"
+    }
+  ],
+  "count": 6,
+  "timestamp": 1764111796.9221106
+}

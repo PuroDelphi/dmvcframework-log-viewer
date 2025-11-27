@@ -1,0 +1,21 @@
+{
+    "logPatterns": [
+        {
+            "pattern": "*.*.*.log",
+            "description": "Patrón: NOMBRE.NUMERO.TAG.log",
+            "regex": "^(.+?)\\.(\\d+)\\.(.+?)\\.log$",
+            "tagGroup": 3,
+            "nameGroup": 1
+        }
+    ],
+    "scanPaths": [
+        "."
+    ],
+    "port": 8080,
+    "updateInterval": 2000,
+    "maxEntriesPerTag": 500,
+    "maxFileReadSize": 524288,
+    "enableVirtualScroll": true,
+    "autoScroll": true,
+    "theme": "dark"
+}

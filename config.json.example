@@ -1,0 +1,46 @@
+{
+  "_comment": "Configuración del Log Monitor - Ejemplos y documentación",
+  
+  "logPatterns": [
+    {
+      "pattern": "*.*.*.log",
+      "description": "Patrón DMVCFramework: NOMBRE.NUMERO.TAG.log (ej: myAPI.00.dmvcframework.log)",
+      "regex": "^(.+?)\\.(\\d+)\\.(.+?)\\.log$",
+      "tagGroup": 3,
+      "nameGroup": 1
+    },
+    {
+      "pattern": "*_*.log",
+      "description": "Patrón con guión bajo: NOMBRE_TAG.log (ej: application_errors.log)",
+      "regex": "^(.+?)_(.+?)\\.log$",
+      "tagGroup": 2,
+      "nameGroup": 1
+    },
+    {
+      "pattern": "*.log",
+      "description": "Patrón simple: NOMBRE.log (ej: system.log)",
+      "regex": "^(.+?)\\.log$",
+      "tagGroup": 1,
+      "nameGroup": 1
+    }
+  ],
+  
+  "scanPaths": [
+    ".",
+    "../"
+  ],
+  
+  "_scanPathsExamples": [
+    "Ejemplos de rutas que puedes usar:",
+    ".",
+    "../",
+    "../../OtraApp/logs",
+    "C:/ProgramData/MiApp/logs",
+    "/var/log/miapp"
+  ],
+  
+  "updateInterval": 2000,
+  "maxEntriesPerTag": 1000,
+  "autoScroll": true,
+  "theme": "dark"
+}

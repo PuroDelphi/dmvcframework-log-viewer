@@ -1,0 +1,66 @@
+/* Date/Time Filter Styles */
+.date-time-filter {
+    margin-top: 16px;
+}
+
+.datetime-inputs {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.datetime-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.datetime-group label {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.datetime-input {
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(0, 212, 255, 0.2);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.datetime-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: var(--glow);
+}
+
+.datetime-input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.clear-date-btn {
+    padding: 8px 12px;
+    background: rgba(255, 51, 102, 0.2);
+    border: 2px solid var(--error);
+    border-radius: 8px;
+    color: var(--error);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clear-date-btn:hover {
+    background: rgba(255, 51, 102, 0.3);
+    transform: scale(1.1);
+}
+
+/* Disable animation for unchanged logs */
+.log-entry.no-animation {
+    animation: none;
+}

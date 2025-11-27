@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Monitor - DMVCFramework</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="datetime-filter.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>📊 Log Monitor</h1>
+                <div class="header-info">
+                    <span class="status-indicator" id="status">
+                        <span class="pulse"></span>
+                        Conectado
+                    </span>
+                    <span class="last-update">Última actualización: <span id="lastUpdate">--:--:--</span></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="tabs" id="tabsContainer">
+                <!-- Tabs will be generated dynamically based on detected tags -->
+            </div>
+
+            <div class="filter-controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar en logs...">
+                    <span class="search-icon">🔎</span>
+                </div>
+
+                <div class="date-time-filter">
+                    <label class="filter-label">Filtrar por fecha/hora:</label>
+                    <div class="datetime-inputs">
+                        <div class="datetime-group">
+                            <label for="startDate">Desde:</label>
+                            <input type="date" id="startDate" class="datetime-input">
+                            <input type="time" id="startTime" class="datetime-input" step="1">
+                        </div>
+                        <div class="datetime-group">
+                            <label for="endDate">Hasta:</label>
+                            <input type="date" id="endDate" class="datetime-input">
+                            <input type="time" id="endTime" class="datetime-input" step="1">
+                        </div>
+                        <button id="clearDateFilter" class="clear-date-btn" title="Limpiar filtro de fecha">✕</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Filtrar por nivel:</label>
+                    <button class="filter-btn active" data-level="all">Todos</button>
+                    <button class="filter-btn" data-level="INFO">INFO</button>
+                    <button class="filter-btn" data-level="WARNING">WARNING</button>
+                    <button class="filter-btn" data-level="ERROR">ERROR</button>
+                    <button class="filter-btn" data-level="DEBUG">DEBUG</button>
+                    <button class="filter-btn" data-level="FATAL">FATAL</button>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="clearBtn" class="action-btn">🗑️ Limpiar</button>
+                    <button id="pauseBtn" class="action-btn">⏸️ Pausar</button>
+                    <button id="autoScrollBtn" class="action-btn active">📜 Auto-scroll</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="log-container">
+            <div id="logContentContainer">
+                <!-- Tab content will be generated dynamically -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="stats">
+                <span>Total de entradas: <strong id="totalEntries">0</strong></span>
+                <span>Filtradas: <strong id="filteredEntries">0</strong></span>
+                <span>Tags detectados: <strong id="tagsCount">0</strong></span>
+                <span>Intervalo de actualización: <strong>2s</strong></span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+    <script src="datetime-filter.js"></script>
+    <script src="performance.js"></script>
+</body>
+
+</html>
