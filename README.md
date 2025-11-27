@@ -1,4 +1,4 @@
-# Log Monitor - Log Monitoring System
+# DMVCFramework Log Viewer
 
 Modern, high-performance web system for real-time log file monitoring with automatic tag detection, multiple folder support, and optimizations for large data volumes.
 
