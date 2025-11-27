@@ -14,6 +14,18 @@ Modern, high-performance web system for real-time log file monitoring with autom
    http://localhost:8080/index.html
    ```
 
+## 📸 Screenshots
+
+### Main Interface
+Real-time log monitoring with dynamic tabs, filtering, and search capabilities.
+
+![Main Interface](screenshots/main_interface.png)
+
+### Multiple Log Types
+Switch between different log types using the dynamic tab system.
+
+![Trace Tab View](screenshots/trace_tab.png)
+
 ## ⚙️ Configuration
 
 ### Frontend Configuration (Optional)

@@ -14,6 +14,18 @@ Sistema web moderno y de alto rendimiento para monitorear archivos de log en tie
    http://localhost:8080/index.html
    ```
 
+## 📸 Capturas de Pantalla
+
+### Interfaz Principal
+Monitoreo de logs en tiempo real con pestañas dinámicas, filtros y búsqueda.
+
+![Interfaz Principal](screenshots/main_interface.png)
+
+### Múltiples Tipos de Logs
+Navega entre diferentes tipos de logs usando el sistema de pestañas dinámicas.
+
+![Vista de Trace](screenshots/trace_tab.png)
+
 ## ⚙️ Configuración
 
 ### Configuración del Frontend (Opcional)
