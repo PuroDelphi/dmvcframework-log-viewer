@@ -2,6 +2,10 @@
 
 Modern, high-performance web system for real-time log file monitoring with automatic tag detection, multiple folder support, and optimizations for large data volumes.
 
+- **Real-time Monitoring**: Auto-updates every 2 seconds.
+- **Multi-language Support**: 🇬🇧 English, 🇪🇸 Spanish, 🇮🇹 Italian, 🇵🇹 Portuguese.
+- **Auto-Discovery**: Automatically detects log files in configured folders.
+
 ## 🚀 Quick Start
 
 1. **Start the server:**
@@ -169,6 +173,20 @@ Maximum size in bytes to read from the end of the file (Recommended: 524288 = 51
 *Allows instant loading of giant log files (GBs) by reading only the most recent part.*
 
 #### `enableVirtualScroll` (Boolean)
+Enables virtual rendering of the log list.
+*Essential for maintaining interface smoothness when there are many logs.*
+
+## 🖥️ Interface Usage Guide
+
+### 1. Tabs and Auto-discovery
+- **Dynamic Tabs**: A tab is automatically created for each unique TAG found.
+- **Auto-discovery**: If you add a new log file while the monitor is running, a new tab will appear automatically in about 10 seconds (without restarting).
+
+### 2. Filtering and Search
+- **Search Box**: Type text to filter logs in real-time (with 100ms debounce).
+- **Levels**: Click the `INFO`, `ERROR`, `DEBUG`, etc. buttons to show only those levels.
+- **Date/Time Filter**:
+  - Select start date/time in "From".
   - Select end date/time in "To".
   - Use the **✕** button to quickly clear the filter.
 
