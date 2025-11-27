@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="datetime-filter.css">
     <link rel="stylesheet" href="lang-selector.css">
+    <link rel="stylesheet" href="themes.css">
 </head>
 
 <body>
@@ -23,6 +24,19 @@
                             <button class="lang-option" data-lang="es" onclick="i18n.setLanguage('es')">ES</button>
                             <button class="lang-option" data-lang="it" onclick="i18n.setLanguage('it')">IT</button>
                             <button class="lang-option" data-lang="pt" onclick="i18n.setLanguage('pt')">PT</button>
+                        </div>
+                    </div>
+                    <div class="theme-selector">
+                        <span class="theme-selector-label" data-i18n="selectTheme">Theme:</span>
+                        <div class="theme-options">
+                            <button class="theme-option" data-theme="default" onclick="ThemeManager.setTheme('default')"
+                                title="Default">🌑</button>
+                            <button class="theme-option" data-theme="light" onclick="ThemeManager.setTheme('light')"
+                                title="Light">☀️</button>
+                            <button class="theme-option" data-theme="cyberpunk"
+                                onclick="ThemeManager.setTheme('cyberpunk')" title="Cyberpunk">🤖</button>
+                            <button class="theme-option" data-theme="matrix" onclick="ThemeManager.setTheme('matrix')"
+                                title="Matrix">💻</button>
                         </div>
                     </div>
                     <span class="status-indicator" id="status">
@@ -103,6 +117,7 @@
     <script src="app.js"></script>
     <script src="datetime-filter.js"></script>
     <script src="performance.js"></script>
+    <script src="theme-selector.js"></script>
 </body>
 
 </html>

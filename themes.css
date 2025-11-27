@@ -1,0 +1,78 @@
+/* Default Theme (Dark) - Already defined in styles.css, but we can enforce defaults here if needed */
+:root {
+    /* These are the default values matching styles.css */
+    --bg-primary: #0f0f23;
+    --bg-secondary: #1a1a2e;
+    --bg-tertiary: #16213e;
+    --accent-primary: #00d4ff;
+    --accent-secondary: #7b2cbf;
+    --text-primary: #e8e8e8;
+    --text-secondary: #a0a0a0;
+    --success: #00ff88;
+    --warning: #ffaa00;
+    --error: #ff3366;
+    --info: #00aaff;
+    --debug: #bb86fc;
+    --fatal: #ff0055;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --glow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --bg-primary: #f0f2f5;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e4e6eb;
+    --accent-primary: #007bff;
+    --accent-secondary: #6610f2;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --success: #28a745;
+    --warning: #ffc107;
+    --error: #dc3545;
+    --info: #17a2b8;
+    --debug: #6f42c1;
+    --fatal: #d63384;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --glow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Cyberpunk Theme */
+[data-theme="cyberpunk"] {
+    --bg-primary: #000000;
+    --bg-secondary: #12001f;
+    --bg-tertiary: #0a0a0a;
+    --accent-primary: #fcee0a;
+    /* Neon Yellow */
+    --accent-secondary: #ff003c;
+    /* Neon Red */
+    --text-primary: #e0faff;
+    --text-secondary: #05d9e8;
+    --success: #39ff14;
+    --warning: #fcee0a;
+    --error: #ff003c;
+    --info: #00f0ff;
+    --debug: #d300c5;
+    --fatal: #ff0000;
+    --shadow: 0 0 15px rgba(252, 238, 10, 0.2);
+    --glow: 0 0 20px rgba(255, 0, 60, 0.4);
+}
+
+/* Matrix Theme */
+[data-theme="matrix"] {
+    --bg-primary: #000000;
+    --bg-secondary: #0d0d0d;
+    --bg-tertiary: #050505;
+    --accent-primary: #03a062;
+    --accent-secondary: #008f11;
+    --text-primary: #00ff41;
+    --text-secondary: #008f11;
+    --success: #00ff41;
+    --warning: #ffff00;
+    --error: #ff0000;
+    --info: #00ccff;
+    --debug: #cc00ff;
+    --fatal: #ff0000;
+    --shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+    --glow: 0 0 15px rgba(0, 255, 65, 0.3);
+}
